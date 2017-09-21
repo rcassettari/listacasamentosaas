@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import br.com.tsi.model.Presente;
 import br.com.tsi.model.Usuario;
 import br.com.tsi.listacasamentosaas.repository.UsuarioRepository;
 
@@ -55,6 +56,22 @@ public class UsuarioController {
 						
 			if(searchedUsers != null && searchedUsers.size() > 0)
 				usuarioRepository.delete(usuario);
+		}
+	}
+	
+	@DeleteMapping( value = "/delete/{idUsuario}" )
+	public void delete(@PathVariable(value="idUsuario") String idUsuario ) {
+		if( idUsuario != null && idUsuario.trim() != "" )
+		{
+			List<Usuario> searchedUsers = usuarioRepository.findById(idUsuario);
+						
+			if(searchedUsers != null && searchedUsers.size() > 0)
+			{
+				Usuario toDelete = new Usuario();
+				toDelete.setId(idUsuario);
+				
+				usuarioRepository.delete(toDelete);
+			}
 		}
 	}
 	

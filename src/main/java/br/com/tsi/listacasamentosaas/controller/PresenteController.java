@@ -53,6 +53,22 @@ public class PresenteController {
 		}
 	}
 	
+	@DeleteMapping( value = "/delete/{idPresente}" )
+	public void delete(@PathVariable(value="idPresente") String idPresente ) {
+		if( idPresente != null && idPresente.trim() != "" )
+		{
+			List<Presente> searchedGifts = presenteRepository.findById(idPresente);
+						
+			if(searchedGifts != null && searchedGifts.size() > 0)
+			{
+				Presente toDelete = new Presente();
+				toDelete.setId(idPresente);
+				
+				presenteRepository.delete(toDelete);
+			}
+		}
+	}
+	
 	@PostMapping( value = "/update/" )
 	public void update(@RequestBody Presente presente) {
 		

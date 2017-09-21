@@ -1,8 +1,8 @@
 br\com\tsi\listacasamentosaas\repository\PresenteRepository.class
-br\com\tsi\listacasamentosaas\controller\PresenteController.class
 br\com\tsi\listacasamentosaas\controller\UsuarioController.class
-br\com\tsi\model\Presente.class
 br\com\tsi\listacasamentosaas\ListaCasamentoSaasApplication.class
+br\com\tsi\model\Usuario.class
+br\com\tsi\model\Presente.class
+br\com\tsi\listacasamentosaas\controller\PresenteController.class
 br\com\tsi\listacasamentosaas\config\MongoConfig.class
 br\com\tsi\listacasamentosaas\repository\UsuarioRepository.class
-br\com\tsi\model\Usuario.class
